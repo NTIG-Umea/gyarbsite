@@ -1,0 +1,62 @@
+@use "sass:map";
+@use "reset";
+@use "config";
+@use "variables";
+@use "utils/container";
+@use "utils/flow";
+@use "utils/bleed";
+@use "utils/list";
+@use "utils/skip-link";
+@use "utils/stretched-link";
+@use "utils/visually-hidden";
+@use "type";
+@use "components/footer";
+@use "components/page";
+@use "components/button";
+@use "components/navbar";
+@use "components/nav";
+@use "components/dropdown";
+@use "components/gamecard";
+@use "components/flash";
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-dark);
+    font-weight: 500;
+    // &:visited {
+    //     color: var(--color-primary);
+    // }
+    &:hover {
+        text-decoration: underline;
+        color: var(--color-secondary);
+    }
+}
+
+.active {
+    color: var(--color-primary) !important;
+}
+
+::selection {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+}
+
+.updates__list {
+    list-style: disc;
+}
+
+.invisible {
+    display: none !important;
+}

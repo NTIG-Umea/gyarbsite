@@ -1,0 +1,9 @@
+@use "sass:map";
+@use "../config" as config;
+
+.brand {
+    text-decoration: none;
+    img, span{
+        vertical-align: middle;
+    }
+}

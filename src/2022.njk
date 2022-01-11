@@ -1,0 +1,21 @@
+---
+title: 2022
+layout: essays.njk
+---
+{% set year = 2022 %}
+<main id="main-content" class="page container">
+    {% set herotext = title %}
+    {% include 'components/hero.njk' %}
+    <section class="page__content flow">
+        {% set class = y2022.classes | hearts %}
+        <h2>
+        {{ class }}
+        </h2>
+        <p class="lead">Årets arbeten.</p>
+        <section class="gamecards">
+            {% for student in y2022.students | randomize %}
+                {{ student | dump }}
+            {% endfor %}
+        </section>
+    </section>
+</main>

@@ -1,0 +1,14 @@
+{
+    "classes": ["te19"],
+    "year": 2022,
+    "students": [
+        {
+            "student": "Åke Åkesson",
+            "title": "Använda användarlightet",
+            "abstract": "Arbetet har ett abstrakt som är abstrakt. Det handlar om stuff.",
+            "image": "ak-ak.png",
+            "poster": "ak-ak-poster.pdf",
+            "essay": "ak-ak-work.pdf"
+        }
+    ]
+}

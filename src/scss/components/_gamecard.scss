@@ -1,0 +1,25 @@
+@use "sass:map";
+@use "../config" as config;
+
+.gamecards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.gamecard {
+    flex: 0 1 calc(50% - map.get(config.$scale, 100));
+    min-width: map.get(config.$scale, 900);
+    width: 100%;
+    margin-bottom: map.get(config.$scale, 100);
+    @media (max-width: map.get(config.$breakpoints, "sm")) {
+        flex: 1 1 100%;
+    }
+    // @media (min-width: map.get(config.$breakpoints, "lg")) {
+    //     flex: 0 1 calc(33.333% - map.get(config.$scale, 100));
+    // }
+    footer {
+        display: flex;
+        justify-content: space-between;
+    }
+}

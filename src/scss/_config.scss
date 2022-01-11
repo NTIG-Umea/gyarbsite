@@ -1,0 +1,57 @@
+@use "sass:map";
+@use "sass:color";
+@use "mixins/scale";
+@use "mixins/a11y-color.scss" as a11y;
+@use "mixins/color-scale" as cs;
+
+$base-size: 1rem;
+$base-scale: 1.333;
+
+$scale: scale.calcScale($base-size, $base-scale);
+
+$font-size-small: map.get($scale, -100);
+$font-size-base: map.get($scale, 0);
+$font-size-medium: map.get($scale, 100);
+$font-size-large: map.get($scale, 200);
+$font-size-xlarge: map.get($scale, 300);
+
+$font-family-sans-serif: "Work Sans", sans-serif;
+$font-family-serif: serif;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+
+$body-font-family: $font-family-sans-serif;
+$body-font-weight: 400;
+$body-line-height: 1.5;
+
+$heading-font-family: $font-family-sans-serif;
+$heading-font-weight: 700;
+$heading-line-height: $base-scale;
+
+$breakpoints: (
+    sm: 36rem,
+    md: 48rem,
+    lg: 62rem,
+);
+
+$color-primary: hsl(248, 86%, 33%);
+$color-secondary: hsl(183, 90%, 49%);
+$color-dark: hsl(0, 0%, 13%);
+$color-light: hsl(0, 0%, 94%);
+
+$greys: cs.create($color-dark);
+
+$light-colors: (
+    'primary': $color-primary,
+    'on-primary': a11y.a11y-color($color-primary, $color-light, 'AAA'),
+    'secondary': $color-secondary,
+    'on-secondary': a11y.a11y-color($color-light, $color-secondary, 'AAA'),
+    'dark': $color-dark,
+    'light': $color-light,
+);
+
+$dark-colors: (
+    'primary': $color-primary,
+    'secondary': $color-secondary,
+    'dark': $color-dark,
+    'light': $color-light,
+);

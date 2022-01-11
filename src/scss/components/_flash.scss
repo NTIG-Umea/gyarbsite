@@ -1,0 +1,28 @@
+@use "sass:map";
+@use "../config" as config;
+
+.flash {
+    z-index: 1100;
+    position: fixed;
+    color: var(--color-light);
+    background-color: var(--color-dark);
+    left: 2vmin;
+    bottom: 2vmin;
+    margin-right: 2vmin;
+    max-width: 60ch;
+    padding: map.get(config.$scale, 100);
+    border: 1px solid var(--color-grey);
+    &__inner {
+        display: grid;
+        justify-items: end;
+    }
+    &__button {
+        color: var(--color-light);
+        background-color: inherit;
+        border: none !important;
+        &:hover {
+            color: var(--color-grey);
+            box-shadow: none !important;
+        }
+    }
+}

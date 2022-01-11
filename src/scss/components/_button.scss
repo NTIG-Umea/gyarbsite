@@ -1,0 +1,36 @@
+@use "sass:map";
+@use "../config" as config;
+.button {
+    display: inline-block;
+    padding: map.get(config.$scale, -200) map.get(config.$scale, 0);
+    background: var(--color-primary);
+    border: 1px solid var(--color-grey);
+    color: var(--color-light);
+    text-decoration: none;
+    font-size: map.get(config.$scale, 0);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: map.get(config.$scale, -800);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 36ch;
+    &:hover {
+        color: var(--color-grey);
+        text-decoration: none;
+        border-color: var(--color-grey-dark);
+        box-shadow: 0 0 0 map.get(config.$scale, -400)var(--color-shadow);
+    }
+    &--like {
+        background-color: inherit;
+        border: 1px solid var(--color-bg);
+        color: var(--color-secondary);
+        &:hover {
+            color: var(--color-secondary);
+            box-shadow: none;
+            border-color: var(--color-bg);
+        }
+    }
+}

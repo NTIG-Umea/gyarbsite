@@ -1,0 +1,480 @@
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/**
+ * DARK MODE MIXIN
+ * 
+ * A little wrapper that lets you define your dark mode custom 
+ * properties in a way that supports the theme toggle web component
+ */
+:root {
+  --flow-space: 1.333rem;
+  --color-mode: "light";
+  --color-bg: #e8e8e8;
+  --color-fg: #212121;
+  --color-light: #f0f0f0;
+  --color-dark: #212121;
+  --color-primary: #1f0c9d;
+  --color-primary-hover: rgba(31, 12, 157, 0.8);
+  --color-on-primary: #1f0c9d;
+  --color-secondary: #0ce2ed;
+  --color-secondary-hover: rgba(12, 226, 237, 0.8);
+  --color-on-secondary: #424242;
+  --color-selection: #0ce2ed;
+  --color-on-selection: #424242;
+  --color-grey: #c7c7c7;
+  --color-grey-light: white;
+  --color-grey-dark: #636363;
+  --color-shadow: rgba(33, 33, 33, 0.2);
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media (min-width: 36rem) {
+  .container {
+    max-width: 36rem;
+  }
+}
+@media (min-width: 48rem) {
+  .container {
+    max-width: 48rem;
+  }
+}
+@media (min-width: 62rem) {
+  .container {
+    max-width: 62rem;
+  }
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space, 1rem);
+}
+
+.bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
+:where(ul[class]) {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.skip-link:not(:focus) {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+.stretched-link::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  content: "";
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+body {
+  line-height: 1.5;
+  font-family: "Work Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "Work Sans", sans-serif;
+  line-height: 1.333;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.368593037rem;
+}
+
+h2 {
+  font-size: 1.776889rem;
+}
+
+h3 {
+  font-size: 1.333rem;
+}
+
+.lead {
+  font-size: 1.333rem;
+}
+
+.footer {
+  color: var(--color-bg);
+  background-color: var(--color-fg);
+  margin-top: auto;
+  padding: 3.1573345183rem 1rem;
+}
+.footer__inner {
+  font-size: 0.7501875469rem;
+}
+.footer__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+@media (max-width: 36rem) {
+  .footer__list {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.footer a {
+  color: var(--color-bg);
+  background-color: var(--color-fg);
+}
+.footer a svg {
+  fill: var(--color-bg);
+}
+.footer a svg:hover {
+  fill: var(--color-secondary);
+}
+
+.page {
+  width: 100%;
+  margin-bottom: 3.1573345183rem;
+}
+.page__heading {
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  padding-top: 2.368593037rem;
+  padding-bottom: 2.368593037rem;
+}
+.page__heading h1 {
+  text-transform: uppercase;
+  font-size: 3.1573345183rem;
+  word-break: break-word;
+  hyphens: auto;
+  white-space: pre-line;
+}
+@media (max-width: 36rem) {
+  .page__heading h1 {
+    font-size: 2.368593037rem;
+  }
+}
+.page__content {
+  margin-top: 1.333rem;
+}
+.page__button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.5627813555rem 1rem;
+  background: var(--color-primary);
+  border: 1px solid var(--color-grey);
+  color: var(--color-light);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1003133663rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 36ch;
+}
+.button:hover {
+  color: var(--color-grey);
+  text-decoration: none;
+  border-color: var(--color-grey-dark);
+  box-shadow: 0 0 0 0.3167228541rem var(--color-shadow);
+}
+.button--like {
+  background-color: inherit;
+  border: 1px solid var(--color-bg);
+  color: var(--color-secondary);
+}
+.button--like:hover {
+  color: var(--color-secondary);
+  box-shadow: none;
+  border-color: var(--color-bg);
+}
+
+.navbar {
+  font-size: 1.333rem;
+  font-weight: 500;
+}
+.navbar a {
+  text-decoration: none;
+  color: var(--color-dark);
+}
+.navbar a:hover {
+  color: var(--color-grey-dark);
+  text-decoration: none;
+}
+.navbar__toggle {
+  border: none;
+  background-color: transparent;
+}
+@media (min-width: 48rem) {
+  .navbar__toggle {
+    display: none;
+  }
+}
+@media (max-width: 48rem) {
+  .navbar__collapse {
+    display: none;
+  }
+}
+.navbar__collapse-show {
+  display: block;
+  width: 100%;
+}
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  padding: 1.333rem 1rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+}
+@media (max-width: 48rem) {
+  .nav {
+    flex-direction: column;
+  }
+}
+.nav__item {
+  padding-left: 1.333rem;
+}
+@media (max-width: 48rem) {
+  .nav__item {
+    padding-left: 0;
+  }
+}
+.nav__dropdown-toggle {
+  border: 0;
+  padding: 0;
+  color: inherit;
+  background-color: inherit;
+}
+.nav__dropdown-toggle:hover {
+  color: var(--color-grey-dark);
+  text-decoration: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown__content {
+  display: none;
+  position: absolute;
+  z-index: 1100;
+  min-width: 9.9687612606rem;
+  background-color: var(--color-bg);
+  box-shadow: 0px 8px 16px 0px var(--color-shadow);
+  right: 0;
+}
+.dropdown:hover .dropdown__content {
+  display: flex;
+  flex-direction: column;
+}
+.dropdown__item {
+  padding: 0.5627813555rem 0.7501875469rem;
+  white-space: nowrap;
+}
+.dropdown__item:hover {
+  box-shadow: 0px 2px 4px 0px var(--color-shadow);
+}
+
+.gamecards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.gamecard {
+  flex: 0 1 calc(50% - 1.333rem);
+  min-width: 13.2883587604rem;
+  width: 100%;
+  margin-bottom: 1.333rem;
+}
+@media (max-width: 36rem) {
+  .gamecard {
+    flex: 1 1 100%;
+  }
+}
+.gamecard footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flash {
+  z-index: 1100;
+  position: fixed;
+  color: var(--color-light);
+  background-color: var(--color-dark);
+  left: 2vmin;
+  bottom: 2vmin;
+  margin-right: 2vmin;
+  max-width: 60ch;
+  padding: 1.333rem;
+  border: 1px solid var(--color-grey);
+}
+.flash__inner {
+  display: grid;
+  justify-items: end;
+}
+.flash__button {
+  color: var(--color-light);
+  background-color: inherit;
+  border: none !important;
+}
+.flash__button:hover {
+  color: var(--color-grey);
+  box-shadow: none !important;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-dark);
+  font-weight: 500;
+}
+a:hover {
+  text-decoration: underline;
+  color: var(--color-secondary);
+}
+
+.active {
+  color: var(--color-primary) !important;
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-light);
+}
+
+.updates__list {
+  list-style: disc;
+}
+
+.invisible {
+  display: none !important;
+}

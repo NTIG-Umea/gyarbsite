@@ -1,0 +1,19 @@
+@use "sass:map";
+@use "../config" as config;
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: map.get(config.$scale, 0);
+    padding-right: map.get(config.$scale, 0);
+
+    @media (min-width: map.get(config.$breakpoints, 'sm')) {
+        max-width: map.get(config.$breakpoints, 'sm');
+    }
+    @media (min-width: map.get(config.$breakpoints, 'md')) {
+        max-width: map.get(config.$breakpoints, 'md');
+    }
+    @media (min-width: map.get(config.$breakpoints, 'lg')) {
+        max-width: map.get(config.$breakpoints, 'lg');
+    }
+}

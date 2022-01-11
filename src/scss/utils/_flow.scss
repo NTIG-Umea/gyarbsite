@@ -1,0 +1,6 @@
+@use "sass:map";
+@use "../config" as config;
+
+.flow > * + * {
+    margin-top: var(--flow-space, map.get(config.$scale, 0));
+}

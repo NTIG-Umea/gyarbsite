@@ -1,0 +1,33 @@
+@use "config";
+
+body {
+    line-height: config.$body-line-height;
+    font-family: config.$body-font-family;
+    font-size: config.$font-size-base;
+    font-weight: 400;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: config.$heading-font-family;
+    line-height: config.$heading-line-height;
+}
+
+h1, h2, h3 {
+    font-weight: config.$heading-font-weight;
+}
+
+h1 {
+    font-size: config.$font-size-xlarge;
+}
+
+h2 {
+    font-size: config.$font-size-large;
+}
+
+h3 {
+    font-size: config.$font-size-medium;
+}
+
+.lead {
+    font-size: config.$font-size-medium;
+}

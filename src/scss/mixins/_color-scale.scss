@@ -1,0 +1,14 @@
+@use "sass:map";
+@function create($color, $prefix: "") {
+    $h: hue($color);
+    $s: saturation($color);
+    $l: lightness($color);
+
+    $temp: ();
+    $num: 900;
+    @for $i from 1 to 10 {
+        $temp: map.set($temp, #{$prefix + $num}, hsl($h, $s, $l * $i));
+        $num: $num - 100;
+    }
+    @return $temp;
+}

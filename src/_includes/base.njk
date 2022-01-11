@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="{{ meta.lang }}">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="{{ meta.description }}" />
+        <meta name="theme-color" content="{{ meta.themeColor }}" />
+        <meta name="google-site-verification" content="SXpq_LM2v4qlpZgEldVf3Oi9vRWnIJM8iNVq1RzgNeQ" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <title>
+        {% if page.url == '/' %}
+            {{ meta.title }}
+        {% else %}
+            {{ title }} - {{ meta.title }}
+        {% endif %}
+        </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;700;900&display=swap"
+            rel="stylesheet" />
+        <link rel="stylesheet" href="{{ '/css/main.css' }}" />
+        {% block head %}
+        {% endblock %}
+    </head>
+    <body>
+        <a class="skip-link" href="#main-content">Hoppa till sidans innehåll</a>
+        {% include 'components/navbar.njk' %}
+        {{ content | safe }}
+        {% include 'components/footer.njk' %}
+        {% include "components/flash-message.njk" %}
+        <script src="{{ '/js/flash.js' }}"></script>
+    </body>
+</html>

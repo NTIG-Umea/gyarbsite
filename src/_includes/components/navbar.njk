@@ -1,0 +1,27 @@
+<nav class="navbar" aria-label="Primary">
+    <div class="navbar__inner container">
+        <a class="brand" href="{{ site.path }}/">
+            {{ meta.title | safe }}
+        </a>
+        <div>
+            <ul class="nav">
+                <li class="nav__item dropdown">
+                    <button class="nav__dropdown-toggle">
+                        År
+                    </button>
+                    <ul class="nav dropdown__content">
+                        {% for year in meta.years %}
+                        <li class="dropdown__item">
+                            <a 
+                                class="nav__link{% if page.url === year %} active{% endif %}"
+                                href="/{{ year | safe }}">
+                                {{ year | safe }}
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

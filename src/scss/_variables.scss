@@ -1,0 +1,47 @@
+@use "sass:map";
+@use "config";
+@use "mixins/scale";
+@use "mixins/dark-mode" as dm;
+
+:root {
+    --flow-space: #{map.get(config.$scale, 100)};
+    --color-mode: "light";
+
+    --color-bg: #{map.get(config.$greys, '300')};
+    --color-fg: #{map.get(config.$light-colors, "dark")};
+
+    --color-light: #{map.get(config.$light-colors, "light")};
+    --color-dark: #{map.get(config.$light-colors, "dark")};
+
+    --color-primary: #{map.get(config.$light-colors, "primary")};
+    --color-primary-hover: #{rgba(map.get(config.$light-colors, "primary"), .8)};
+    --color-on-primary: #{map.get(config.$light-colors, "on-primary")};
+    --color-secondary: #{map.get(config.$light-colors, "secondary")};
+    --color-secondary-hover: #{rgba(map.get(config.$light-colors, "secondary"), .8)};
+    --color-on-secondary: #{map.get(config.$light-colors, "on-secondary")};
+
+    --color-selection: #{map.get(config.$light-colors, "secondary")};
+    --color-on-selection: #{map.get(config.$light-colors, "on-secondary")};
+
+    --color-grey: #{map.get(config.$greys, '400')};
+    --color-grey-light: #{map.get(config.$greys, '200')};
+    --color-grey-dark: #{map.get(config.$greys, '700')};
+
+    --color-shadow:  #{rgba(map.get(config.$light-colors, "dark"), .2)};
+}
+
+// @include dm.dark-mode() {
+//     --color-bg: #{map.get(config.$light-colors, "dark")};
+//     --color-fg: #{map.get(config.$light-colors, "light")};
+
+//     --color-light: #{map.get(config.$light-colors, "light")};
+//     --color-dark: #{map.get(config.$light-colors, "dark")};
+
+//     --color-primary: #{map.get(config.$light-colors, "primary")};
+//     --color-on-primary: #{map.get(config.$light-colors, "on-primary")};
+//     --color-secondary: #{map.get(config.$light-colors, "secondary")};
+//     --color-on-secondary: #{map.get(config.$light-colors, "on-secondary")};
+
+//     --color-selection: #{map.get(config.$light-colors, "secondary")};
+//     --color-on-selection: #{map.get(config.$light-colors, "on-secondary")};
+// } ;

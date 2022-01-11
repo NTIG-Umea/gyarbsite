@@ -1,0 +1,32 @@
+@use "sass:map";
+@use "../config" as config;
+
+.footer {
+    color: var(--color-bg);
+    background-color: var(--color-fg);
+    margin-top: auto;
+    padding: map.get(config.$scale, 400) map.get(config.$scale, 0);
+    &__inner {
+        font-size: config.$font-size-small;
+    }
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        @media (max-width: map.get(config.$breakpoints, 'sm')) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+    a {
+        color: var(--color-bg);
+        background-color: var(--color-fg);
+        svg {
+            fill: var(--color-bg);
+            &:hover {
+                fill: var(--color-secondary);
+            }
+        }
+    }
+}

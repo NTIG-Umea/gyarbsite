@@ -1,0 +1,30 @@
+{% set gameid = game.title | slug + game.creators | listCreators | slug %}
+<article class="gamecard flow" id="{{ gameid }}">
+    <img 
+        src="/img/{{ year }}/{{ game.team | slug }}/{{ game.image }}"
+        alt="Skärmdump av spelet {{ game.title }}.">
+    <header>
+        <h3>
+            {{ game.title }}
+        </h3>
+        <p>Skapat av: {{ game.creators | listCreators }}</p>
+    </header>
+    <div class="gamecard__body flow">
+        {% if game.description %}
+        <p>
+            {{ game.description }}
+        </p>
+        {% endif %}
+        {% set team = teams | getTeam(game.team) %}
+        <p>Konceptet är utvecklat av <strong class="gamecard__teamname">
+            {{ team.team }}</strong>: 
+            <span>{{ team.members | listCreators }}</span>.</p>
+        {% if game.git %}
+        <p>Koden finns på <a href="{{ game.git }}" target="_blank">GitHub</a>.</p>
+        {% endif %}
+    </div>
+    <footer>
+        <button class="button button--like" title="Gilla">❤ 0</button>
+        <a class="button" href="{{ game.url }}" target="_blank">Spela {{ game.title }}</a>
+    </footer>
+</article>

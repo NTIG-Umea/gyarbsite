@@ -1,0 +1,42 @@
+@use "sass:map";
+@use "../config" as config;
+
+.navbar {
+    font-size: config.$font-size-medium;
+    font-weight: 500;
+    a {
+        text-decoration: none;
+        color: var(--color-dark);
+        &:hover {
+            color: var(--color-grey-dark);
+            text-decoration: none;
+        }
+    }
+    &__toggle {
+        border: none;
+        background-color: transparent;
+
+        @media (min-width: map.get(config.$breakpoints, "md")) {
+            display: none;
+        }
+    }
+
+    &__collapse {
+        @media (max-width: map.get(config.$breakpoints, "md")) {
+            display: none;
+        }
+        &-show {
+            display: block;
+            width: 100%;
+          }
+    }
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        padding: map.get(config.$scale, 100) map.get(config.$scale, 0);
+
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}

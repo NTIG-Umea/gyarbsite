@@ -1,0 +1,13 @@
+<header class="page__hero">
+    <div class="page__heading bleed">
+        <div class="container">
+            {% if herotext %}
+            <h1>{{ herotext }}</h1>
+            {% else %}
+            <h1>{{ meta.title }}
+                {{ meta.school }}
+            </h1>
+            {% endif %}
+        </div>
+    </div>
+</header>

@@ -1,0 +1,49 @@
+@use "sass:map";
+@use "sass:math";
+
+// https://gist.github.com/seanislegend/107ccf9c81ec9fd1aae0
+@function mapReverse ($map) {
+    $result: null;
+
+    @if type-of($map) == "map" {
+        $keys: map-keys($map);
+        $map-reversed: ();
+        
+        @for $i from length($keys) through 1 {
+            $map-reversed: map-merge(
+                $map-reversed,
+                (nth($keys, $i): map-get($map, nth($keys, $i)))
+            );
+        }
+
+        @if type-of($map-reversed) == "map" {
+            $result: $map-reversed;
+        } @else {
+            @warn 'There was an error reversing the order of "#{$map}"';
+        }
+    } @else {
+        @warn '"#{$map}" is not a valid map';
+    }
+
+    @return $result;
+}
+
+@function calcScale($size, $scale) {
+    $pos: (
+        0: $size,
+    );
+    $prev: $size;
+    @for $i from 1 to 15 {
+        $prev: $prev * $scale;
+        $pos: map.set($pos, $i * 100, $prev);
+    }
+    $neg: ();
+    $prev: $size;
+    @for $i from -1 to -10 {
+        $prev: math.div($prev, $scale);
+        $neg: map.set($neg, $i * 100, $prev);
+    }
+
+    $scale: map.merge(mapReverse($neg), $pos);
+    @return $scale;
+}

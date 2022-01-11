@@ -1,0 +1,26 @@
+@use "sass:map";
+@use "../config" as config;
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    @media (max-width: map.get(config.$breakpoints, "md")) {
+        flex-direction: column;
+    }
+    &__item {
+        padding-left: map.get(config.$scale, 100);
+        @media (max-width: map.get(config.$breakpoints, "md")) {
+            padding-left: 0;
+        }
+    }
+    &__dropdown-toggle {
+        border: 0;
+        padding: 0;
+        color: inherit;
+        background-color: inherit;
+        &:hover {
+            color: var(--color-grey-dark);
+            text-decoration: none;
+        }
+    }
+}
