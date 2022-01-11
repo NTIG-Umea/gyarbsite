@@ -1,13 +1,13 @@
 @use "sass:map";
 @use "../config" as config;
 
-.gamecards {
+.studentcards {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.gamecard {
+.studentcard {
     flex: 0 1 calc(50% - map.get(config.$scale, 100));
     min-width: map.get(config.$scale, 900);
     width: 100%;
@@ -20,6 +20,6 @@
     // }
     footer {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
     }
 }

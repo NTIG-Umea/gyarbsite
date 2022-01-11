@@ -9,7 +9,7 @@ module.exports = (eleventyConfig) => {
     if (!isProduction) {
         eleventyConfig.addPassthroughCopy('./src/css');
     }
-    eleventyConfig.addPassthroughCopy('./src/img/');
+    eleventyConfig.addPassthroughCopy('./src/assets/');
     eleventyConfig.addPassthroughCopy('./src/js/');
     eleventyConfig.addPassthroughCopy('src/robots.txt');
     eleventyConfig.addPassthroughCopy('./src/favicon.ico');

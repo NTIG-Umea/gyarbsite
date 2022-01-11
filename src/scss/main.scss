@@ -16,7 +16,7 @@
 @use "components/navbar";
 @use "components/nav";
 @use "components/dropdown";
-@use "components/gamecard";
+@use "components/studentcard";
 @use "components/flash";
 
 body {
@@ -40,7 +40,7 @@ a {
     // }
     &:hover {
         text-decoration: underline;
-        color: var(--color-secondary);
+        color: var(--color-primary);
     }
 }
 

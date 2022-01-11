@@ -1,0 +1,33 @@
+---
+title: Om
+layout: base.njk
+---
+{%set herotext = "Om den här webbplatsen" %}
+<main id="main-content" class="page container">
+    {% include 'components/hero.njk' %}
+    <section class="page__content flow">
+        <p class="lead">Om du har synpunkter på sidan eller några frågor så kontakta
+            oss gärna.
+        </p>
+        <p>Önskar du få ditt arbete nedtaget av någon anledning så maila oss.</p>
+        <h2>Kontaktinformation</h2>
+        <h3>Skola</h3>
+        <p>
+            Vill du läsa mer om vår skola så finns information på
+            <a href="{{ meta.url }}" target="_blank">{{ meta.school }}</a
+            >.
+        </p>
+        <h3>Lärare</h3>
+        <ul>
+            <li>
+                <a href="mailto:jens.andreasson@ntig.se">Jens Andreasson</a>
+            </li>
+            <li>
+                <a href="mailto:magnus.silverdal@ntig.se">Magnus Silverdal</a>
+            </li>
+            <li>
+                <a href="mailto:simon.karlson@ntig.se">Simon Karlson</a>
+            </li>
+        </ul>
+    </section>
+</main>

@@ -7,15 +7,16 @@ layout: essays.njk
     {% set herotext = title %}
     {% include 'components/hero.njk' %}
     <section class="page__content flow">
-        {% set class = y2022.classes | hearts %}
-        <h2>
-        {{ class }}
-        </h2>
-        <p class="lead">Årets arbeten.</p>
-        <section class="gamecards">
-            {% for student in y2022.students | randomize %}
-                {{ student | dump }}
-            {% endfor %}
-        </section>
+        {% for class in y2022.classes %}
+            <h2>
+            {{ class.code }}
+            </h2>
+            <p class="lead">Årets gymnasiearbeten på {{ class.program }}.</p>
+            <section class="studentcards">
+                {% for student in class.students | randomize %}
+                    {% include 'components/student-card.njk' %}
+                {% endfor %}
+            </section>
+        {% endfor %}
     </section>
 </main>

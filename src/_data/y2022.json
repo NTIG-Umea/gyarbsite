@@ -1,14 +1,35 @@
 {
-    "classes": ["te19"],
     "year": 2022,
-    "students": [
+    "classes": [
         {
-            "student": "Åke Åkesson",
-            "title": "Använda användarlightet",
-            "abstract": "Arbetet har ett abstrakt som är abstrakt. Det handlar om stuff.",
-            "image": "ak-ak.png",
-            "poster": "ak-ak-poster.pdf",
-            "essay": "ak-ak-work.pdf"
+            "code": "te19",
+            "program": "teknikprogrammet", 
+            "students": [
+                {
+                    "name": "Åke Åkesson",
+                    "title": "Använda användarlightetteieititett",
+                    "description": "Arbetet har ett abstrakt som är abstrakt. Det handlar om stuff.",
+                    "image": "ak-ak.jpg",
+                    "poster": "url",
+                    "essay": "url"
+                },
+                {
+                    "name": "Lisa Lisasson",
+                    "title": "Kaffe är sump",
+                    "description": "Varför är jobmeals kaffe en sådan ledsam historia.",
+                    "image": "ak-ak.png",
+                    "poster": "url",
+                    "essay": "url"
+                },
+                {
+                    "name": "Karl Pigg",
+                    "title": "Avgrunden är djup",
+                    "description": "Jag tittade ned i avgrunden och den svarade. Den vibrerade med min själ.",
+                    "image": "ak-ak.png",
+                    "poster": "url",
+                    "essay": "url"
+                }
+            ]
         }
     ]
 }

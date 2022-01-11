@@ -22,6 +22,9 @@
     a {
         color: var(--color-bg);
         background-color: var(--color-fg);
+        &:hover {
+            color: var(--color-secondary);
+        }
         svg {
             fill: var(--color-bg);
             &:hover {

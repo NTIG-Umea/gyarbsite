@@ -229,6 +229,9 @@ h3 {
   color: var(--color-bg);
   background-color: var(--color-fg);
 }
+.footer a:hover {
+  color: var(--color-secondary);
+}
 .footer a svg {
   fill: var(--color-bg);
 }
@@ -392,26 +395,26 @@ h3 {
   box-shadow: 0px 2px 4px 0px var(--color-shadow);
 }
 
-.gamecards {
+.studentcards {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.gamecard {
+.studentcard {
   flex: 0 1 calc(50% - 1.333rem);
   min-width: 13.2883587604rem;
   width: 100%;
   margin-bottom: 1.333rem;
 }
 @media (max-width: 36rem) {
-  .gamecard {
+  .studentcard {
     flex: 1 1 100%;
   }
 }
-.gamecard footer {
+.studentcard footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .flash {
@@ -459,7 +462,7 @@ a {
 }
 a:hover {
   text-decoration: underline;
-  color: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 .active {

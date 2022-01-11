@@ -1,0 +1,25 @@
+{% if student %}
+    {% set studentid = student.name | slug + "-" + student.title | slug %}
+    <article class="studentcard flow" id="{{ studentid }}">
+        <img 
+            src="/assets/{{ year }}/{{ class.code }}/{{ student.image }}"
+            alt="Illustration av arbetet {{ student.title }}.">
+        <header>
+            <h3>
+                {{ student.title }}
+            </h3>
+            <p>Författare: {{ student.name }}</p>
+        </header>
+        <div class="studentcard__body flow">
+            {% if student.description %}
+            <p>
+                {{ student.description }}
+            </p>
+            {% endif %}
+            <p>Se arbetets <a href="{{ student.poster }}">poster</a>.</p>
+        </div>
+        <footer>
+            <a class="button" href="{{ student.essay }}" target="_blank">Ladda ned som pdf</a>
+        </footer>
+    </article>
+{% endif %}
