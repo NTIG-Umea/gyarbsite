@@ -14,7 +14,10 @@
         right: 0;
     }
     
-    &:hover &__content {
+    &:hover &__content,
+    &:focus &__content,
+    &:active &__content,
+    &:focus-within &__content {
         display: flex;
         flex-direction: column;
     }
@@ -23,7 +26,12 @@
         padding: map.get(config.$scale, -200) map.get(config.$scale, -100);
         white-space: nowrap;
         &:hover {
+            color: var(--color-on-secondary);
+            background-color: var(--color-secondary);
             box-shadow: 0px 2px 4px 0px var(--color-shadow);
+        }
+        a {
+            display: block;
         }
     }
 }

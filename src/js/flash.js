@@ -8,7 +8,7 @@ if (!consent) {
     button.classList.add('button', 'flash__button');
     button.textContent = `Ok`;
     const p = document.createElement('p');
-    p.textContent = `Den här webbplatsen sparar information i din webbläsare kopplat till de olika spelen.`;
+    p.textContent = `Den här webbplatsen använder kakor för att se besöksinformation.`;
     message.appendChild(p);
     inner.appendChild(button);
     button.addEventListener('click', () => {

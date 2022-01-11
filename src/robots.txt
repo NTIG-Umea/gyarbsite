@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://localhost
+Sitemap: https://gyarb.netlify.app/sitemap.xml

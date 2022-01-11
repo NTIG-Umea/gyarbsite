@@ -383,7 +383,7 @@ h3 {
   box-shadow: 0px 8px 16px 0px var(--color-shadow);
   right: 0;
 }
-.dropdown:hover .dropdown__content {
+.dropdown:hover .dropdown__content, .dropdown:focus .dropdown__content, .dropdown:active .dropdown__content, .dropdown:focus-within .dropdown__content {
   display: flex;
   flex-direction: column;
 }
@@ -392,7 +392,12 @@ h3 {
   white-space: nowrap;
 }
 .dropdown__item:hover {
+  color: var(--color-on-secondary);
+  background-color: var(--color-secondary);
   box-shadow: 0px 2px 4px 0px var(--color-shadow);
+}
+.dropdown__item a {
+  display: block;
 }
 
 .studentcards {

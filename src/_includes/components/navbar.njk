@@ -16,7 +16,7 @@
                         {% for year in meta.years %}
                         <li class="dropdown__item">
                             <a 
-                                class="nav__link{% if page.url === year %} active{% endif %}"
+                                class="{% if page.url === year %} active{% endif %}"
                                 href="/{{ year | safe }}">
                                 {{ year | safe }}
                             </a>

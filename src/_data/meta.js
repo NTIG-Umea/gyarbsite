@@ -6,5 +6,5 @@ module.exports = {
     url: 'https://www.ntigymnasiet.se/umea/',
     description: 'Gymnasiearbeten från NTI Gymnasiet Umeå',
     themeColor: '#200c9c',
-    years: [2022]
+    years: [2022, 2021, 2020]
 };
